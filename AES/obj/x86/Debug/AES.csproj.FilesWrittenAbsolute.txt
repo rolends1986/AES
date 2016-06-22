@@ -1,0 +1,7 @@
+/Users/qinjilei/Projects/AES/AES/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/qinjilei/Projects/AES/AES/obj/x86/Debug/AES.gtk-gui.gui.stetic
+/Users/qinjilei/Projects/AES/AES/bin/Debug/AES.exe.mdb
+/Users/qinjilei/Projects/AES/AES/bin/Debug/AES.exe
+/Users/qinjilei/Projects/AES/AES/obj/x86/Debug/AES.exe
+/Users/qinjilei/Projects/AES/AES/obj/x86/Debug/AES.exe.mdb
+/Users/qinjilei/Projects/AES/AES/obj/x86/Debug/AES.233232322332.png

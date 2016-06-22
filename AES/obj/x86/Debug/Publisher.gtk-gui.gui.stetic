@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/AES.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="1001 531">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">AES加/解密</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Table" id="table3">
+        <property name="MemberName" />
+        <property name="NRows">3</property>
+        <property name="RowSpacing">10</property>
+        <property name="ColumnSpacing">20</property>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="txtSource">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" />
+                <property name="Justification">Fill</property>
+                <property name="WrapMode">Word</property>
+                <property name="LeftMargin">10</property>
+                <property name="RightMargin">10</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="TopAttach">1</property>
+            <property name="BottomAttach">2</property>
+            <property name="AutoSize">True</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">True</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="txtCode">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+                <property name="WrapMode">Word</property>
+                <property name="LeftMargin">10</property>
+                <property name="RightMargin">10</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="TopAttach">2</property>
+            <property name="BottomAttach">3</property>
+            <property name="AutoSize">True</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">True</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">10</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Key:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtKey">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">IV:</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtIV">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">加/解密</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="BtnDo_Clicked" />
+              </widget>
+              <packing>
+                <property name="Position">4</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="XPadding">10</property>
+            <property name="AutoSize">True</property>
+            <property name="YOptions">Fill</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">False</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Publisher.Windows.Widgets.AndroidWidget" design-size="876 506">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">版本号: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtVersion">
+                <property name="MemberName">txtVersion</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox5">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">APK MD5: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtMd5">
+                <property name="MemberName">txtMd5</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnSelectFile">
+                <property name="MemberName">btnSelectFile</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">选择</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox6">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">APK下载地址: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtApkAddress">
+                <property name="MemberName">txtApkAddress</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.VBox" id="vbox4">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">更新说明: </property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                    <property name="MemberName" />
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="txtMemo">
+                        <property name="MemberName">txtMemo</property>
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Text" translatable="yes" />
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="button7">
+                <property name="MemberName" />
+                <property name="Sensitive">False</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">上一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnNext">
+                <property name="MemberName">btnNext</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">下一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="Publisher.Windows.WinPublisher" design-size="889 422">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WinPublisher</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="BorderWidth">3</property>
+    <child>
+      <widget class="Gtk.Frame" id="frame1">
+        <property name="MemberName" />
+        <property name="ShadowType">None</property>
+        <property name="BorderWidth">6</property>
+        <child>
+          <widget class="Gtk.Alignment" id="gaContainer">
+            <property name="MemberName">gaContainer</property>
+            <property name="Xalign">0</property>
+            <property name="Yalign">0</property>
+            <property name="LeftPadding">12</property>
+            <property name="RightPadding">12</property>
+            <property name="BottomPadding">12</property>
+            <property name="BorderWidth">12</property>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="labelTitle">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">&lt;b&gt;第一步/共三步&lt;/b&gt;</property>
+            <property name="UseMarkup">True</property>
+          </widget>
+          <packing>
+            <property name="type">label_item</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Publisher.Windows.Widgets.IosWidget" design-size="986 450">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">版本号: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtVersion">
+                <property name="MemberName">txtVersion</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox5">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">是否已上线: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.CheckButton" id="cbPublished">
+                <property name="MemberName">cbPublished</property>
+                <property name="CanFocus">True</property>
+                <property name="Label" translatable="yes">选择</property>
+                <property name="DrawIndicator">True</property>
+                <property name="HasLabel">True</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox6">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">安装地址: </property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtDownloadAddress">
+                <property name="MemberName">txtDownloadAddress</property>
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.VBox" id="vbox4">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">更新说明: </property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                    <property name="MemberName" />
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="txtMemo">
+                        <property name="MemberName">txtMemo</property>
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Text" translatable="yes" />
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="btnPre">
+                <property name="MemberName">btnPre</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">上一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnNext">
+                <property name="MemberName">btnNext</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">下一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="Publisher.Windows.Widgets.ResultWidget" design-size="810 541">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="labelTitle">
+                <property name="MemberName">labelTitle</property>
+                <property name="LabelProp" translatable="yes">TITLE</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.VBox" id="vbox4">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">生成结果: </property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                    <property name="MemberName" />
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="txtResult">
+                        <property name="MemberName">txtResult</property>
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Text" translatable="yes" />
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Alignment" id="alignment1">
+            <property name="MemberName" />
+            <property name="LeftPadding">200</property>
+            <property name="RightPadding">200</property>
+            <child>
+              <widget class="Gtk.Button" id="btnCopy">
+                <property name="MemberName">btnCopy</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">复制结果</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VBox" id="vbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="btnPre">
+                <property name="MemberName">btnPre</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">上一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnNext">
+                <property name="MemberName">btnNext</property>
+                <property name="Sensitive">False</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">下一步</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>

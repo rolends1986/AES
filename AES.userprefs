@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="AES/Publisher.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AES/Program.cs">
+    <Files>
+      <File FileName="AES/Windows/Widgets/AndroidWidget.cs" Line="79" Column="12" />
+      <File FileName="AES/Core/SystemManager.cs" Line="8" Column="28" />
+      <File FileName="AES/Windows/WinPublisher.cs" Line="11" Column="35" />
+      <File FileName="AES/MainWindow.cs" Line="14" Column="34" />
+      <File FileName="AES/Program.cs" Line="9" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Publisher PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
